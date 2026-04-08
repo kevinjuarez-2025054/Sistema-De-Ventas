@@ -6,12 +6,28 @@
     <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenido a la página de inicio</h1>
-        <div  onclick="window.location.href='/home/home-cliente'" class="card">
-            <h3>Clientes</h3>
-            <p>Gestionar clientes</p>
+
+   <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-store"></i> Sistema Ventas
         </div>
-    </div>
+        <nav>
+            <ul>
+                <li><a class="active" th:href="@{/home}"><i class="fas fa-chart-line"></i> Inicio</a></li>
+                <li><a th:href="@{/ventas}"><i class="fas fa-shopping-cart"></i> Ventas</a></li>
+                <li><a th:href="@{/productos}"><i class="fas fa-box"></i> Productos</a></li>
+                <li><a th:href="@{/cliente}" ><i class="fas fa-users"></i> Clientes</a></li>
+                <li><a th:href="@{/usuarios}"><i class="fas fa-user-shield"></i> Usuarios</a></li>
+                <li><a th:href="@{/detalleventa}"><i class="fas fa-detalleventa"></i>Detalle Venta</a></li>
+                <li><a th:href="@{/cerrarsesion}"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="card">
+            <h1>Bienbenidos a la pagina principal</h1>
+            <p>Este es el menu principal de donde se controla todo</p>
+        </div>
+
 </body>
 </html>
