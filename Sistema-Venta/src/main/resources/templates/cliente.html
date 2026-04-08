@@ -6,21 +6,53 @@
     <link rel="stylesheet" th:href="@{/css/clientes.css}">
 </head>
 <body>
-    <div class="container">
-        <h1>Clientes</h1>
-        <div class="cliente">
-            <span>Juan Pérez</span>
-            <span>juan.perez@example.com</span>
-            <span>123-456-7890</span>
-            <span class="estado activo">ACTIVO</span>
-        </div>
 
-        <div class="cliente">
-            <span>María Gómez</span>
-            <span>maria.gomez@example.com</span>
-            <span>987-654-3210</span>
-            <span class="estado inactivo">INACTIVO</span>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-store"></i> Sistema Ventas
         </div>
+        <nav>
+            <ul>
+                <li><a href='../templates/home.html'><i class="fas fa-chart-line"></i> Inicio</a></li>
+                <li><a href='../templates/ventas.html'><i class="fas fa-shopping-cart"></i> Ventas</a></li>
+                <li><a href='../templates/productos.html'><i class="fas fa-box"></i> Productos</a></li>
+                <li><a class="active" href="../templates/cliente.html"><i class="fas fa-users"></i> Clientes</a></li>
+                <li><a href='../templates/usuarios.html'><i class="fas fa-user-shield"></i> Usuarios</a></li>
+                <li><a href="../templates/detalleventa.html"><i class="fas fa-detalleventa"></i>Detalle Venta</a></li>
+                <li><a href='../templates/login.html'><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>DPI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Dirección</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2145786230010</td>
+                    <td>Luis</td>
+                    <td>Morales</td>
+                    <td>Zona 7, Cuidad Guatemala</td>
+                    <td>Activo</td>
+                </tr>
+                <tr>
+                    <td>7894561234870</td>
+                    <td>Carlos</td>
+                    <td>Villalobos</td>
+                    <td>Trebol</td>
+                    <td>Inactivo</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
