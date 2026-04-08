@@ -1,0 +1,28 @@
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #122540, #120907);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.card {
+    width: 400px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 30px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.card:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}

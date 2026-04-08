@@ -1,0 +1,57 @@
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #122540, #120907);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 60%;
+    margin: 40px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* LISTA DE CLIENTES */
+.cliente {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: white;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+    cursor: pointer;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.cliente:hover {
+    transform: scale(1.02);
+    background-color: #eef5ff;
+}
+
+/* ESTADOS */
+.estado {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.activo {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.inactivo {
+    background-color: #e74c3c;
+    color: white;
+}
