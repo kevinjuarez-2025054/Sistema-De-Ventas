@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Clientes</title>
-    <link rel="stylesheet" th:href="@{/css/clientes.css}">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet" th:href="@{/css/base.css}">
 </head>
 <body>
 
@@ -25,6 +26,7 @@
     </aside>
 
     <div class="container">
+        <a th:href="@{/agregarCliente}" class="btn">Agregar Cliente</a>
         <table>
             <thead>
                 <tr>
@@ -42,14 +44,22 @@
                     <td>Luis</td>
                     <td>Morales</td>
                     <td>Zona 7, Cuidad Guatemala</td>
-                    <td>Activo</td>
+                    <td class="estado-activo">Activo</td>
+                    <td class="acciones">
+                        <a th:href="@{/editarCliente}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
+                        <a th:href="@{/eliminarCliente}" class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
+                    </td>
                 </tr>
                 <tr>
                     <td>7894561234870</td>
                     <td>Carlos</td>
                     <td>Villalobos</td>
                     <td>Trebol</td>
-                    <td>Inactivo</td>
+                    <td class="estado-inactivo">Inactivo</td>
+                    <td class="acciones">
+                        <a th:href="@{/editarCliente}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
+                        <a th:href="@{/eliminarCliente}" class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
+                    </td>
                 </tr>
             </tbody>
         </table>
