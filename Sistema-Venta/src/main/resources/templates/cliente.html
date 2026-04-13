@@ -26,7 +26,10 @@
     </aside>
 
     <div class="container">
-        <a th:href="@{/agregarCliente}" class="btn">Agregar Cliente</a>
+        <div>
+            <a th:href="@{/agregarCliente}" class="btn">Agregar Cliente</a>
+        </div>
+        
         <table>
             <thead>
                 <tr>
@@ -58,7 +61,7 @@
                     <td class="estado-inactivo">Inactivo</td>
                     <td class="acciones">
                         <a th:href="@{/editarCliente}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
-                        <a th:href="@{/eliminarCliente}" class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
+                        <a class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
                     </td>
                 </tr>
             </tbody>
