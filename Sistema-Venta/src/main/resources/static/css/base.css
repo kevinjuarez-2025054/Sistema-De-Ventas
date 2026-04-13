@@ -1,7 +1,6 @@
 body {
     height: 100vh;
     background: linear-gradient(135deg, #122540, #120907);
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -12,7 +11,7 @@ body {
     min-height: 100vh;
     background: linear-gradient(180deg, #1b2a47, #0f1b2d);
     color: white;
-    position: fixed; /* sidebar fijo al lado */
+    position: fixed; 
     top: 0;
     left: 0;
     display: flex;
@@ -79,6 +78,12 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.container {
+    margin-left: 280px; 
+    margin-top: 20px;   
+    padding: 30px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -86,6 +91,7 @@ table {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    margin-top: 15px;
 }
 
 thead {
@@ -161,15 +167,15 @@ td {
 .estado-activo {
     background-color: #28a745;
     color: white;
-    padding: 5px 10px;
-    border-radius: 12px;
+    padding: 2px 8px;
+    border-radius: 30px;
     text-align: center;
 }
 
 .estado-inactivo {
     background-color: #dc3545;
     color: white;
-    padding: 5px 10px;
-    border-radius: 12px;
+    padding: 2px 8px;
+    border-radius: 30px;
     text-align: center;
 }
