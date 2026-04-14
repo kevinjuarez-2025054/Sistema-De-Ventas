@@ -19,7 +19,7 @@ public class HomeController {
     }
 
     @GetMapping("/cerrar-sesion")
-    public String redirectIndex(){
-        return ("indext");
+    public String cerrarSesion(){
+        return ("redirect:/index");
     }
 }
