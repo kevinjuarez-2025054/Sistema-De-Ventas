@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head> 
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet" th:href="@{/css/base.css}">
 </head>
 <body>
-    
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-store"></i> Sistema Ventas
+        </div>
+        <nav>
+            <ul>
+                <li><a th:href="@{/home}"><i class="fas fa-chart-line"></i> Inicio</a></li>
+                <li><a th:href="@{/ventas}"><i class="fas fa-shopping-cart"></i> Ventas</a></li>
+                <li><a th:href="@{/productos}"><i class="fas fa-box"></i> Productos</a></li>
+                <li><a th:href="@{/cliente}" ><i class="fas fa-users"></i> Clientes</a></li>
+                <li><a class="active" th:href="@{/usuarios}"><i class="fas fa-user-shield"></i> Usuarios</a></li>
+                <li><a th:href="@{/detalleventa}"><i class="fas fa-detalleventa"></i>Detalle Venta</a></li>
+                <li><a th:href="@{/cerrarsesion}"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Codigo de Usuario</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2145786230010</td>
+                    <td>Luis Morales</td>
+                    <td>password123</td>
+                    <td>luis.morales@example.com</td>
+                    <td>Administrador</td>
+                    <td class="estado-activo">Activo</td>
+                    <td class="acciones">
+                        <a th:href="@{/editarUsuario}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
+                        <a class ="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7894561234870</td>
+                    <td>Carlos Villalobos</td>
+                    <td>password456</td>
+                    <td>carlos.villalobos@example.com</td>
+                    <td>Usuario</td>
+                    <td class="estado-inactivo">Inactivo</td>
+                    <td class="acciones">
+                        <a th:href="@{/editarUsuario}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
+                        <a class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
