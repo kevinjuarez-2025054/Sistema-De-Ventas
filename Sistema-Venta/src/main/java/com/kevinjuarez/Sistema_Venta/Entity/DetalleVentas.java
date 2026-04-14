@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 public class DetalleVentas {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo_detalle_venta")
     private Integer codigoDetalleVenta;
 
