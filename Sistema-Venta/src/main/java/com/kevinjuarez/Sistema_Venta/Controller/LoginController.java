@@ -1,14 +1,22 @@
 package com.kevinjuarez.Sistema_Venta.Controller;
 
-import jakarta.servlet.http.HttpSession;
+import com.kevinjuarez.Sistema_Venta.Entity.Usuario;
+import com.kevinjuarez.Sistema_Venta.Service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class LoginController {
+    @Autowired
+    private UsuarioService service;
+
     //inicio de login
     @GetMapping("/")
     public String inicio(){
@@ -23,31 +31,22 @@ public class LoginController {
 
     //Procesar Login
     @PostMapping("/login")
-    public String login(@RequestParam String usuario,
+    public String login(@RequestParam String username,
                         @RequestParam String password,
-                        HttpSession session,
-                        Model model){
-        String userCorrecto = "admin";
-        String passwordCorrecto = "1234";
+                        Model model) {
 
-        if (usuario.equals(userCorrecto) && password.equals(passwordCorrecto)){
-            //Guardar Sesion
-            session.setAttribute("usuarioLogeado", usuario);
-            return "redirect:/home";
-        }else {
-            model.addAttribute("error","usuario y contrasena incorrectos");
+        Usuario u = service.login(username, password);
+
+        if (u != null) {
+            return "redirect:/home-login";
+        } else {
+            model.addAttribute("error", "Credenciales incorrectas");
             return "index";
         }
     }
 
-    //proteger ruta sin SpringSecurity
     @GetMapping("/home-login")
-    public String mostrarHome(HttpSession session){
-
-        //validar la sesion
-        if (session.getAttribute("usuarioLogeado") ==null){
-            return "redirect:/index";
-        }
+    public String mostrarHome(){
         return "home";
     }
 }
