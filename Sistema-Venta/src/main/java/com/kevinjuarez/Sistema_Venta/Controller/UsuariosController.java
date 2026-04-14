@@ -15,22 +15,17 @@ public class UsuariosController {
     @Autowired
     private UsuarioService service;
 
-    @GetMapping("/usuarios")
-    public String mostrarUsuarios(){
-        return "usuarios";
-    }
-
     // LISTA
-    @GetMapping("/lista")
+    @GetMapping("/usuarios")
     public String listar(Model model) {
         List<Usuario> lista = service.getAllUsuario();
         model.addAttribute("usuarios", lista);
-        return "lista";
+        return "usuarios";
     }
 
     @GetMapping("/eliminar/{id}")
     public String eliminar(@PathVariable int id) {
         service.deleteUsuario(id);
-        return "redirect:/lista";
+        return "redirect:/usuarios";
     }
 }
