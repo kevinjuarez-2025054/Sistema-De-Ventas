@@ -25,6 +25,32 @@ public class UsuarioServiceImplements implements UsuarioService{
     }
 
     @Override
+    public Usuario registrar(String username, String password) {
+
+        if (usuarioRepository.findByUsername(username) != null) {
+            return null;
+        }
+
+        Usuario u = new Usuario();
+        u.setUsername(username);
+        u.setPassword(password);
+
+        return usuarioRepository.save(u);
+    }
+
+    @Override
+    public Usuario login(String username, String password) {
+
+        Usuario u = usuarioRepository.findByUsername(username);
+
+        if (u != null && u.getPassword().equals(password)) {
+            return u;
+        }
+
+        return null;
+    }
+
+    @Override
     public Usuario saveUsuario(Usuario usuario) throws RuntimeException {
         return usuarioRepository.save(usuario);
     }
