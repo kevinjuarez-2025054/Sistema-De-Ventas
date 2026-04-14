@@ -2,6 +2,7 @@ package com.kevinjuarez.Sistema_Venta.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -15,5 +16,10 @@ public class HomeController {
     @GetMapping("/home-cliente")
     public String mostrarCliente(){
         return "cliente";
+    }
+
+    @GetMapping("/cerrar-sesion")
+    public String redirectIndex(){
+        return ("indext");
     }
 }

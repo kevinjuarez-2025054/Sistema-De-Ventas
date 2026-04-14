@@ -20,7 +20,7 @@
                 <li><a th:href="@{/cliente}" ><i class="fas fa-users"></i> Clientes</a></li>
                 <li><a class="active" th:href="@{/usuarios}"><i class="fas fa-user-shield"></i> Usuarios</a></li>
                 <li><a th:href="@{/detalleventa}"><i class="fas fa-detalleventa"></i>Detalle Venta</a></li>
-                <li><a th:href="@{/cerrarsesion}"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+                <li><a th:href="@{/cerrarsesion}" th:action="@{/cerrar-sesion}"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
             </ul>
         </nav>
     </aside>
