@@ -7,26 +7,46 @@
 
 body {
     height: 100vh;
-    background: linear-gradient(135deg, #122540, #120907);
+    background: linear-gradient(135deg, #1a676a, #61d5d4);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .login-container {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    padding: 40px;
-    border-radius: 20px;
-    width: 320px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    text-align: center;
-    color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        color: white;
 }
 
 .login-container h2 {
     margin-bottom: 20px;
     font-weight: 600;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left img {
+    max-width: 250px;
+    height: auto;
+}
+
+.right {
+    flex: 1;
+    text-align: center;
 }
 
 .input-group {
@@ -52,7 +72,7 @@ button {
     padding: 12px;
     border: none;
     border-radius: 10px;
-    background: #ffffff;
+    background: #777474;
     color: black;
     font-weight: bold;
     cursor: pointer;
@@ -67,4 +87,22 @@ button:hover {
     margin-top: 15px;
     font-size: 12px;
     opacity: 0.8;
+}
+
+.error {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.switch{
+    margin-top: 15px;
+}
+
+.imagen{
+    
 }
