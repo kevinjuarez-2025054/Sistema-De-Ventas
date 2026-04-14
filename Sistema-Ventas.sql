@@ -11,7 +11,7 @@ create table Clientes (
 );
 
 create table Usuarios (
-    codigo_usuario int primary key not null,
+    codigo_usuario int primary key not null auto_increment,
     username varchar(45),
     password varchar(45),
     email varchar(60),
@@ -20,7 +20,7 @@ create table Usuarios (
 );
 
 create table Productos (
-    codigo_producto int primary key,
+    codigo_producto int primary key auto_increment,
     nombre_producto varchar(60),
     precio decimal(10,2),
     stock int,
@@ -28,7 +28,7 @@ create table Productos (
 );
 
 create table Ventas (
-    codigo_venta int primary key not null,
+    codigo_venta int primary key not null auto_increment,
     fecha_venta date,
     total decimal(10,2),
     estado int,
@@ -39,7 +39,7 @@ create table Ventas (
 );
 
 create table Detalle_venta (
-    codigo_detalle_venta int primary key not null,
+    codigo_detalle_venta int primary key not null auto_increment,
     cantidad int,
     precio_unitario decimal(10,2),
     subtotal decimal(10,2),
