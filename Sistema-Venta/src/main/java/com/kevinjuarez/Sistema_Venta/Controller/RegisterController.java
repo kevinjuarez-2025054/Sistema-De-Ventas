@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class RegisterController {
     @GetMapping("/register")
     public String mostrarRegister(){
-        return "redirect:/register";
+        return "register";
     }
 
     @PostMapping("register-login")
