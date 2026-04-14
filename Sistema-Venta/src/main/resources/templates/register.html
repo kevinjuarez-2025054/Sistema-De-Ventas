@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <div class="login-container">
@@ -13,6 +14,9 @@
             </div>
             <div class="input-group">
                 <input type="password"  name="password"  placeholder="contraseña" required>
+            </div>
+            <div class="input-group">
+                <input type="text" name="email"  placeholder="correo electrónico" required>
             </div>
             <button type="submit">Register</button>
         </form>
