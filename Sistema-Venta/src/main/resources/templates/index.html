@@ -7,19 +7,31 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Login</h2>
-        <form th:action="@{/login}" method="post">
-            <div class="input-group">
-                <input type="text"  name="usuario"  placeholder="usuario" required>
+        <div class="left">
+            <div class="imagen">
+                <img src="https://mediodigital.mx/wp-content/uploads/2023/03/que-es-un-sistema-punto-de-venta-2.png" alt="">
             </div>
-            <div class="input-group">
-                <input type="password"  name="password"  placeholder="contraseña" required>
+        </div>
+
+        <div class="right">
+            <h2>Login</h2>
+            <form th:action="@{/login}" method="post">
+                <div class="input-group">
+                    <input type="text"  name="username"  placeholder="usuario" required>
+                </div>
+                <div class="input-group">
+                    <input type="password"  name="password"  placeholder="contraseña" required>
+                </div>
+                <button type="submit">Login</button>
+                <div class="switch">
+                    <a th:href="@{/register}" style="color: cyan;">¿No tienes cuenta? Regístrate</a>
+                </div>
+            </form>
+
+            <div th:if="${error}" class="error">
+                <span th:text="${error}" ></span>
             </div>
-            <button type="submit">Login</button>
-            <div>
-                <a th:href="@{/register}">¿No tienes cuenta? Regístrate</a>
-            </div>
-        </form>
+        </div>
     </div>
 </body>
 </html>
