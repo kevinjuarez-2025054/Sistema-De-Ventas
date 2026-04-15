@@ -20,17 +20,17 @@ public class LoginController {
     //inicio de login
     @GetMapping("/")
     public String inicio(){
-        return "redirect:/index";
+        return "redirect:/login";
     }
 
     //Mostrar Login
-    @GetMapping("/index")
+    @GetMapping("/login")
     public String mostrarLogin(){
-        return "index";
+        return "login";
     }
 
     //Procesar Login
-    @PostMapping("/login")
+    @PostMapping("/logear")
     public String login(@RequestParam String username,
                         @RequestParam String password,
                         Model model) {
@@ -41,7 +41,7 @@ public class LoginController {
             return "redirect:/home-login";
         } else {
             model.addAttribute("error", "Credenciales incorrectas");
-            return "index";
+            return "login";
         }
     }
 
