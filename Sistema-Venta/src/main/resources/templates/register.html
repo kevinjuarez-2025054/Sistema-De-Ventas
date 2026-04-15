@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
@@ -8,9 +8,9 @@
 <body>
     <div class="login-container">
         <h2>Register</h2>
-        <form th:action="@{/register-login}" method="post">
+        <form th:action="@{/registrar}" method="post">
             <div class="input-group">
-                <input type="text"  name="usuario"  placeholder="usuario" required>
+                <input type="text"  name="username"  placeholder="usuario" required>
             </div>
             <div class="input-group">
                 <input type="password"  name="password"  placeholder="contraseña" required>
