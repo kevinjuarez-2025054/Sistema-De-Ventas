@@ -28,7 +28,7 @@ public class RegisterController {
         Usuario u = service.registrar(username, password,email);
 
         if (u != null) {
-            return "redirect:/register-login";
+            return "redirect:/home-login";
         } else {
             model.addAttribute("error", "Credenciales incorrectas");
             return "login";
@@ -37,6 +37,6 @@ public class RegisterController {
 
     @PostMapping("register-login")
     public String registrarUsuario(){
-        return "login";
+        return "redirect:/index";
     }
 }
