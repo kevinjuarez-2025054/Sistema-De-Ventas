@@ -34,7 +34,15 @@ public class UsuarioServiceImplements implements UsuarioService{
         Usuario u = new Usuario();
         u.setUsername(username);
         u.setPassword(password);
-        u.setEmail(email);
+        if (email.contains("@servicioventa.com")){
+            u.setEmail(email);
+            u.setRol("admin");
+            u.setEstado(1);
+        }else {
+            u.setEmail(email);
+            u.setRol("user");
+            u.setEstado(1);
+        }
 
         return usuarioRepository.save(u);
     }
