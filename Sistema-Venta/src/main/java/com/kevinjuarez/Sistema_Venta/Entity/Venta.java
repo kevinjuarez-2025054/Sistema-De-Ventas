@@ -13,7 +13,6 @@ public class Venta {
     private Integer codigoVenta;
 
     @Column(name = "fecha_venta")
-    @Temporal(TemporalType.DATE)
     private Date fechaVenta;
 
     @Column(name = "total")
