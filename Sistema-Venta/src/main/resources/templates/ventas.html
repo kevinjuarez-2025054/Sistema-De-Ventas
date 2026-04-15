@@ -50,7 +50,7 @@
                     <td th:text="${v.cliente.nombreCliente + ' ' + v.cliente.apellidoCliente}"></td>>
                     <td class="acciones">
                         <a th:href="@{/editarVenta}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
-                        <a class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
+                        <a th:href="@{'/eliminar-ventas/' + ${c.dpiCliente}}" class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
                     </td>
                 </tr>
             </tbody>
