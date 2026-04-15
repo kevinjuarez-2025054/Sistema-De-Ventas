@@ -25,7 +25,7 @@ public class UsuarioServiceImplements implements UsuarioService{
     }
 
     @Override
-    public Usuario registrar(String username, String password) {
+    public Usuario registrar(String username, String password,String email) {
 
         if (usuarioRepository.findByUsername(username) != null) {
             return null;
@@ -34,6 +34,7 @@ public class UsuarioServiceImplements implements UsuarioService{
         Usuario u = new Usuario();
         u.setUsername(username);
         u.setPassword(password);
+        u.setEmail(email);
 
         return usuarioRepository.save(u);
     }
