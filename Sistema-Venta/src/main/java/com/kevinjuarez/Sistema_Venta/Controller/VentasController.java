@@ -22,8 +22,8 @@ public class VentasController {
         return "ventas";
     }
 
-    @GetMapping("/eliminar-cliente/{id}")
-    public String eliminarCliente(@PathVariable int id) {
+    @GetMapping("/eliminar-ventas/{id}")
+    public String eliminarVentas(@PathVariable int id) {
         service.deleteVenta(id);
         return "redirect:/ventas";
     }
