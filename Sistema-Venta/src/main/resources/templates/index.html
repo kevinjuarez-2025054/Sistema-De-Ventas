@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Ventas</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
+
+<header class="navbar">
+    <div class="logo">💼 VentaFlow</div>
+    <div class="auth">
+        <a th:href="@{/login}">Iniciar sesión</a>
+        <a th:href="@{/register}" class="button">Registrarse</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Gestiona tu negocio fácilmente</h1>
+        <p>
+            Controla ventas, clientes e inventario en un solo lugar.
+            Optimiza tu negocio con nuestro sistema moderno y rápido.
+        </p>
+
+        <div class="cta">
+            <input type="email" name="email" placeholder="Correo electrónico">
+            <a th:href="@{/register}" class="button">Comenzar</a>
+        </div>
+
+        <div class="stats">
+            <div><strong>+1,000</strong><span>Ventas</span></div>
+            <div><strong>500+</strong><span>Clientes</span></div>
+            <div><strong>300+</strong><span>Productos</span></div>
+            <div><strong>99%</strong><span>Disponibilidad</span></div>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
