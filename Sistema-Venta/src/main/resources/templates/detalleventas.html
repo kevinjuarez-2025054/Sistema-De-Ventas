@@ -39,33 +39,20 @@
                     <th>Precio Unitario</th>
                     <th>Sub Total</th>
                     <th>DPI de Cliente</th>
-                    <th>Codigo de Producto</th>
+                    <th>Producto</th>
                     <th>Codigo de Venta</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>456</td>
-                    <td>2</td>
-                    <td>150.00</td>
-                    <td>300.00</td>
-                    <td>2145786230010</td>
-                    <td>1</td>
-                    <td>4112223</td>
-                    <td class="acciones">
-                        <a th:href="@{/editarVenta}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
-                        <a class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>896</td>
-                    <td>1</td>
-                    <td>200.00</td>
-                    <td>200.00</td>
-                    <td>7894561234870</td>
-                    <td>2</td>
-                    <td>4112223</td>
+                <tr th:each="dv : ${detalleventas}">
+                    <td th:text="${dv.id}"></td>
+                    <td th:text="${dv.cantidad}"></td>
+                    <td th:text="${dv.precioUnitario}"></td>
+                    <td th:text="${dv.subTotal}"></td>
+                    <td th:text="${dv.dpiCliente}"></td>
+                    <td th:text="${dv.productos.nombreProducto}"></td>
+                    <td th:text="${dv.venta.codigoVenta}"></td>
                     <td class="acciones">
                         <a th:href="@{/editarVenta}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
                         <a class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
