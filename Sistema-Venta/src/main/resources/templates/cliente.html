@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Clientes</title>
@@ -35,34 +35,21 @@
             <thead>
                 <tr>
                     <th>DPI</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
+                    <th>Nombre Completo</th>
                     <th>Dirección</th>
                     <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>2145786230010</td>
-                    <td>Luis</td>
-                    <td>Morales</td>
-                    <td>Zona 7, Cuidad Guatemala</td>
-                    <td class="estado-activo">Activo</td>
+                <tr th:each="c : ${clientes}">
+                    <td th:text="${c.dpiCliente}"></td>
+                    <td th:text="${c.nombreCliente + ' ' + c.apellidoCliente}"></td>
+                    <td th:text="${c.direccionCliente}"></td>
+                    <td th:text="${c.estadoCliente}"></td>
                     <td class="acciones">
                         <a th:href="@{/editarCliente}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
-                        <a class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>7894561234870</td>
-                    <td>Carlos</td>
-                    <td>Villalobos</td>
-                    <td>Trebol</td>
-                    <td class="estado-inactivo">Inactivo</td>
-                    <td class="acciones">
-                        <a th:href="@{/editarCliente}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
-                        <a class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
+                        <a th:href="@{'/eliminar-cliente/' + ${c.dpiCliente}}"><i class="fi fi-rs-trash"></i></a>
                     </td>
                 </tr>
             </tbody>
