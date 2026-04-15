@@ -20,7 +20,7 @@ public class ClienteController {
     @GetMapping("/cliente")
     public String mostrarcliente(Model model){
         List<Cliente> lista = service.getAllCliente();
-        model.addAttribute("cliente",lista);
+        model.addAttribute("clientes",lista);
         return "cliente";
     }
 
