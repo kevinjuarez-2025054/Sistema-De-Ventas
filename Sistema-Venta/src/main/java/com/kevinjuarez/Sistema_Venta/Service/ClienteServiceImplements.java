@@ -26,7 +26,13 @@ public class ClienteServiceImplements implements ClienteService{
 
     @Override
     public Cliente saveCliente(Cliente cliente) throws RuntimeException {
-        return clienteRepository.save(cliente);
+        Cliente c = new Cliente();
+        c.setDpiCliente(cliente.getDpiCliente());
+        c.setNombreCliente(cliente.getNombreCliente());
+        c.setApellidoCliente(cliente.getApellidoCliente());
+        c.setDireccionCliente(cliente.getDireccionCliente());
+        c.setEstadoCliente(1);
+        return clienteRepository.save(c);
     }
 
     @Override
