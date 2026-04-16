@@ -43,23 +43,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>485</td>
-                    <td>Producto 1</td>
-                    <td>100.00</td>
-                    <td>50</td>
-                    <td class="estado-activo">Activo</td>
-                    <td class="acciones">
-                        <a th:href="@{/editarProducto}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
-                        <a class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>78951</td>
-                    <td>Producto 2</td>
-                    <td>200.00</td>
-                    <td>30</td>
-                    <td class="estado-inactivo">Inactivo</td>
+                <tr th:each="p : ${productos}">
+                    <td th:text="${p.codigoProducto}"></td>
+                    <td th:text="${p.nombreProducto}"></td>
+                    <td th:text="${p.precio}"></td>
+                    <td th:text="${p.stock}"></td>
+                    <td th:text="${p.estado}"></td>
                     <td class="acciones">
                         <a th:href="@{/editarProducto}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
                         <a class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
