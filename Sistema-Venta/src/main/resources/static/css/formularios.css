@@ -1,0 +1,79 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a676a, #61d5d4);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTENEDOR */
+.container {
+    width: 420px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* TITULO */
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* GRUPOS */
+form div {
+    margin-bottom: 15px;
+}
+
+/* LABEL */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+/* FOCUS */
+input:focus {
+    border-color: #2196f3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(33,150,243,0.3);
+}
+
+/* BOTON */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #2196f3;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* HOVER */
+button:hover {
+    background: #1976d2;
+}
