@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/formularios.css}">
+
+    <title>Agregar Cliente</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Agregar Cliente</h2>
+        <form th:action="@{/guardarCliente}" method="post">
+            <div>
+                <label for="dpi">DPI:</label>
+                <input type="text" name="dpiCliente" placeholder="DPI" required>
+            </div>
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombreCliente" placeholder="nombre" required>
+            </div>
+            <div>
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellidoCliente" placeholder="apellido" required>
+            </div>
+            <div>
+                <label for="direccion">Dirección:</label>
+                <input type="text" name="direccionCliente" placeholder="direccion" required>
+            </div>
+            <button type="submit">Guardar Cliente</button>
+        </form>
+    </div>
+</body>
+</html>
