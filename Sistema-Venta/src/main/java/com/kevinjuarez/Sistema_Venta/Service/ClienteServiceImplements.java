@@ -37,16 +37,19 @@ public class ClienteServiceImplements implements ClienteService{
 
     @Override
     public Cliente updateCliente(Integer id, Cliente cliente) {
+
         Cliente c = clienteRepository.findById(id).orElse(null);
 
-        if (c != null) {
-            c.setNombreCliente(cliente.getNombreCliente());
-            c.setApellidoCliente(cliente.getApellidoCliente());
-            c.setDireccionCliente(cliente.getDireccionCliente());
-            return clienteRepository.save(c);
+        if (c == null) {
+            return null;
         }
 
-        return null;
+        c.setNombreCliente(cliente.getNombreCliente());
+        c.setApellidoCliente(cliente.getApellidoCliente());
+        c.setDireccionCliente(cliente.getDireccionCliente());
+        c.setEstadoCliente(cliente.getEstadoCliente());
+
+        return clienteRepository.save(c);
     }
 
     @Override
