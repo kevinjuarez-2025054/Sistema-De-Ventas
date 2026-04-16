@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Venta</title>
+  <link rel="stylesheet" th:href="@{/css/formularios.css}">
+</head>
+<body>
+
+<div class="container">
+  <h2>Editar Venta</h2>
+
+  <form th:action="@{/venta/guardarventa}"
+        th:object="${venta}"
+        method="post">
+
+    <input type="hidden" th:field="*{codigoVenta}">
+
+    <div>
+      <label>Código:</label>
+      <input type="text" th:value="${venta.codigoVenta}" readonly>
+    </div>
+
+    <div>
+      <label>Fecha:</label>
+      <input type="date" th:field="*{fechaVenta}" required>
+    </div>
+
+    <div>
+      <label>Total:</label>
+      <input type="number" step="0.01" th:field="*{total}" required>
+    </div>
+
+    <div>
+      <label>Estado:</label>
+      <select th:field="*{estado}">
+        <option value="1">Activo</option>
+        <option value="0">Inactivo</option>
+      </select>
+    </div>
+
+    <button type="submit">Actualizar</button>
+
+  </form>
+</div>
+
+</body>
+</html>
