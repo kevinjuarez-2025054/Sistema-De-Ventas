@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.kevinjuarez.Sistema_Venta.Entity.Producto;
 import com.kevinjuarez.Sistema_Venta.Service.ProductoServiceImplements;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ProductosController {
@@ -27,5 +29,17 @@ public class ProductosController {
     public String eliminarProducto(@PathVariable int id) {
         service.deleteProducto(id);
         return "redirect:/productos";
+    }
+
+    @PostMapping("/guardarproducto")
+    public String guardar(@ModelAttribute Producto producto){
+        service.updateProducto(producto.getCodigoProducto(), producto);
+        return "redirect:/producto";
+    }
+
+    @GetMapping("/eliminarproducto/{id}")
+    public String eliminar(@PathVariable Integer id){
+        service.deleteProducto(id);
+        return "redirect:/producto";
     }
 }
