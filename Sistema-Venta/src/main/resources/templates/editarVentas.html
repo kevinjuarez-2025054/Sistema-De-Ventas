@@ -11,11 +11,12 @@
 <div class="container">
   <h2>Editar Venta</h2>
 
-  <form th:action="@{/venta/guardarventa}"
+  <form th:action="@{/actualizarVenta}"
         th:object="${venta}"
         method="post">
-
     <input type="hidden" th:field="*{codigoVenta}">
+    <input type="hidden" th:field="*{cliente.dpiCliente}">
+    <input type="hidden" th:field="*{usuario.codigoUsuario}">
 
     <div>
       <label>Código:</label>
