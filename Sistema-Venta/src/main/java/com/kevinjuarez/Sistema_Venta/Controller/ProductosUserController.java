@@ -29,7 +29,7 @@ public class ProductosUserController {
     public String formularioEditar(@PathVariable Integer id, Model model) {
         Producto producto = service.getById(id);
         model.addAttribute("producto", producto);
-        return "editarProductoUser";
+        return "editarProductosUser";
     }
 
     @PostMapping("/actualizarProductoUser")
