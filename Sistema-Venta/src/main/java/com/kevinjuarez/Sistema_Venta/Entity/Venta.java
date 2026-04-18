@@ -2,6 +2,7 @@ package com.kevinjuarez.Sistema_Venta.Entity;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -13,7 +14,7 @@ public class Venta {
     private Integer codigoVenta;
 
     @Column(name = "fecha_venta")
-    private Date fechaVenta;
+    private LocalDate fechaVenta;
 
     @Column(name = "total")
     private BigDecimal total;
@@ -39,11 +40,11 @@ public class Venta {
         this.codigoVenta = codigoVenta;
     }
 
-    public Date getFechaVenta() {
+    public LocalDate getFechaVenta() {
         return fechaVenta;
     }
 
-    public void setFechaVenta(Date fechaVenta) {
+    public void setFechaVenta(LocalDate fechaVenta) {
         this.fechaVenta = fechaVenta;
     }
 
