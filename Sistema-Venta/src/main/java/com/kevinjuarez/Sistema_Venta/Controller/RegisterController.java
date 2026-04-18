@@ -1,6 +1,5 @@
 package com.kevinjuarez.Sistema_Venta.Controller;
 
-import com.kevinjuarez.Sistema_Venta.Entity.Usuario;
 import com.kevinjuarez.Sistema_Venta.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
