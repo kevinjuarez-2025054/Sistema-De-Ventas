@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-store"></i> Sistema Ventas
+        </div>
+        <nav>
+            <ul>
+                <li><a th:href="@{/homeUser}"><i class="fas fa-chart-line"></i> Inicio</a></li>
+                <li><a th:href="@{/ventasUser}"><i class="fas fa-shopping-cart"></i> Ventas</a></li>
+                <li><a class="active" th:href="@{/productosUser}"><i class="fas fa-box"></i> Productos</a></li>
+                <li><a th:href="@{/detalleventasUser}"><i class="fas fa-invoice"></i>Detalle Venta</a></li>
+                <li><a th:href="@{/home/cerrar-sesion}"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="container">
+        <div>
+            <a th:href="@{/agregarProducto}" class="btn">Agregar Producto</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Codigo de Producto</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="p : ${productos}">
+                    <td th:text="${p.codigoProducto}"></td>
+                    <td th:text="${p.nombreProducto}"></td>
+                    <td th:text="${p.precio}"></td>
+                    <td th:text="${p.stock}"></td>
+                    <td th:text="${p.estado}"></td>
+                    <td class="acciones">
+                        <a th:href="@{'/editarProducto/' + ${p.codigoProducto}}" class="btn-editar">
+                            <i class="fi fi-rs-pencil"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
