@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" th:href="@{/css/formularios.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Editar Usuario</h2>
+
+    <form th:action="@{/actualizarUsuario}" th:object="${usuario}" method="post">
+
+        <input type="hidden" th:field="*{codigoUsuario}">
+
+        <div>
+            <label>Código:</label>
+            <input type="text" th:value="${usuario.codigoUsuario}" readonly>
+        </div>
+        <div>
+            <label>Username:</label>
+            <input type="text" th:field="*{username}" required>
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" th:field="*{password}" required>
+        </div>
+        <div>
+            <label>Email:</label>
+            <input type="email" th:field="*{email}" required>
+        </div>
+        <div>
+            <label>Rol:</label>
+            <select th:field="*{rol}">
+                <option value="ADMIN">Admin</option>
+                <option value="USER">Usuario</option>
+            </select>
+        </div>
+        <div>
+            <label>Estado:</label>
+            <select th:field="*{estado}">
+                <option value="1">Activo</option>
+                <option value="0">Inactivo</option>
+            </select>
+        </div>
+
+        <button type="submit">Actualizar</button>
+    </form>
+</div>
+</body>
+</html>

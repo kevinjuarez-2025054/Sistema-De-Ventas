@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -26,6 +28,18 @@ public class UsuariosController {
     @GetMapping("/eliminar/{id}")
     public String eliminar(@PathVariable int id) {
         service.deleteUsuario(id);
+        return "redirect:/usuarios";
+    }
+
+    @GetMapping("/editarUsuario/{id}")
+    public String formularioEditar(@PathVariable Integer id, Model model) {
+        model.addAttribute("usuario", service.getById(id));
+        return "editarUsuario";
+    }
+
+    @PostMapping("/actualizarUsuario")
+    public String actualizar(@ModelAttribute Usuario usuario) {
+        service.updateUsuario(usuario.getCodigoUsuario(), usuario);
         return "redirect:/usuarios";
     }
 }
