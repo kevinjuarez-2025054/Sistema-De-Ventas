@@ -47,9 +47,9 @@
                     <td th:text="${v.fechaVenta}"></td>
                     <td th:text="${v.total}"></td>
                     <td th:text="${v.estado}"></td>
-                    <td th:text="${v.cliente.nombreCliente + ' ' + v.cliente.apellidoCliente}"></td>
+                    <td th:text="${v.cliente != null ? v.cliente.nombreCliente + ' ' + v.cliente.apellidoCliente : 'Sin cliente'}"></td>
                     <td class="acciones">
-                        <a th:href="@{/editarVenta}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
+                        <a th:href="@{'/editarVentas/' + ${v.codigoVenta}}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
                         <a th:href="@{'/eliminar-ventas/' + ${v.codigoVenta}}" class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
                     </td>
                 </tr>
