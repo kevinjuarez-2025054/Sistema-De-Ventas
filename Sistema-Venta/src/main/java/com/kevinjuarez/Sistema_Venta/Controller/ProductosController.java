@@ -8,10 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.kevinjuarez.Sistema_Venta.Entity.Producto;
 import com.kevinjuarez.Sistema_Venta.Service.ProductoServiceImplements;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ProductosController {
@@ -19,27 +19,28 @@ public class ProductosController {
     private ProductoServiceImplements service;
 
     @GetMapping("/productos")
-    public String mostrarProductos(Model model){
+    public String mostrarProductos(Model model) {
         List<Producto> lista = service.getAllProducto();
         model.addAttribute("productos", lista);
         return "productos";
+    }
+
+    @GetMapping("/editarProducto/{id}")
+    public String formularioEditar(@PathVariable Integer id, Model model) {
+        Producto producto = service.getById(id);
+        model.addAttribute("producto", producto);
+        return "editarProducto";
+    }
+
+    @PostMapping("/actualizarProducto")
+    public String guardar(@ModelAttribute Producto producto) {
+        service.updateProducto(producto.getCodigoProducto(), producto);
+        return "redirect:/productos";
     }
 
     @GetMapping("/eliminar-producto/{id}")
     public String eliminarProducto(@PathVariable int id) {
         service.deleteProducto(id);
         return "redirect:/productos";
-    }
-
-    @PostMapping("/guardarproducto")
-    public String guardar(@ModelAttribute Producto producto){
-        service.updateProducto(producto.getCodigoProducto(), producto);
-        return "redirect:/producto";
-    }
-
-    @GetMapping("/eliminarproducto/{id}")
-    public String eliminar(@PathVariable Integer id){
-        service.deleteProducto(id);
-        return "redirect:/producto";
     }
 }
