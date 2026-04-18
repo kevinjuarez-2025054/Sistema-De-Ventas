@@ -26,7 +26,7 @@
 
     <div class="container">
         <div>
-            <a th:href="@{/agregarDetalleVenta}" class="btn">Agregar Detalle</a>
+            <a th:href="@{/agregarDetalleVentaUser}" class="btn">Agregar Detalle</a>
         </div>
 
         <table>
@@ -50,7 +50,7 @@
                     <td th:text="${dv.producto != null ? dv.producto.nombreProducto : 'Sin producto'}"></td>
                     <td th:text="${dv.venta != null ? dv.venta.codigoVenta : 'Sin venta'}"></td>
                     <td class="acciones">
-                        <a th:href="@{/editarDetalleVenta/{id}(id=${dv.codigoDetalleVenta})}" class="btn-editar">
+                        <a th:href="@{/editarDetalleVentaUser/{id}(id=${dv.codigoDetalleVenta})}" class="btn-editar">
                             <i class="fi fi-rs-pencil"></i>
                         </a>
                     </td>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/formularios.css}">
+    <title>Agregar Detalle de Venta</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>Agregar Detalle de Venta</h2>
+
+    <form th:action="@{/guardarDetalleVentaUser}" th:object="${detalleventa}" method="post">
+
+        <div>
+            <label>Cantidad:</label>
+            <input type="number" th:field="*{cantidad}" required>
+        </div>
+
+        <div>
+            <label>Precio Unitario:</label>
+            <input type="number" step="0.01" th:field="*{precioUnitario}" required>
+        </div>
+
+        <div>
+            <label>Subtotal:</label>
+            <input type="number" step="0.01" th:field="*{subtotal}" required>
+        </div>
+
+        <!-- PRODUCTO -->
+        <div>
+            <label>Producto:</label>
+            <select th:field="*{producto.codigoProducto}" required>
+                <option value="">Seleccione un producto</option>
+                <option th:each="p : ${productos}"
+                        th:value="${p.codigoProducto}"
+                        th:text="${p.nombreProducto}">
+                </option>
+            </select>
+        </div>
+
+        <!-- VENTA -->
+        <div>
+            <label>Venta:</label>
+            <select th:field="*{venta.codigoVenta}" required>
+                <option value="">Seleccione una venta</option>
+                <option th:each="v : ${ventas}"
+                        th:value="${v.codigoVenta}"
+                        th:text="${v.codigoVenta}">
+                </option>
+            </select>
+        </div>
+
+        <button type="submit">Agregar</button>
+
+    </form>
+</div>
+
+</body>
+</html>
