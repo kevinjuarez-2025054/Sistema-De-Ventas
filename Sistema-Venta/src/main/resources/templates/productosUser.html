@@ -26,7 +26,7 @@
 
     <div class="container">
         <div>
-            <a th:href="@{/agregarProducto}" class="btn">Agregar Producto</a>
+            <a th:href="@{/agregarProductoUser}" class="btn">Agregar Producto</a>
         </div>
 
         <table>
@@ -48,7 +48,7 @@
                     <td th:text="${p.stock}"></td>
                     <td th:text="${p.estado}"></td>
                     <td class="acciones">
-                        <a th:href="@{'/editarProducto/' + ${p.codigoProducto}}" class="btn-editar">
+                        <a th:href="@{'/editarProductoUser/' + ${p.codigoProducto}}" class="btn-editar">
                             <i class="fi fi-rs-pencil"></i>
                         </a>
                     </td>
