@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@RequestMapping("/cliente")
 public class ClienteController {
     @Autowired
     private ClienteService service;
 
-    @GetMapping("/cliente")
+    @GetMapping
     public String mostrarcliente(Model model){
         List<Cliente> lista = service.getAllCliente();
         model.addAttribute("clientes",lista);
@@ -31,10 +32,10 @@ public class ClienteController {
     public String formularioEditar(@PathVariable Integer id, Model model) {
         Cliente cliente = service.getByIdCliente(id);
         model.addAttribute("cliente", cliente);
-        return "EditarCliente";
+        return "editarCliente";
     }
 
-    @PostMapping("/cliente/guardarcliente")
+    @PostMapping("/guardarcliente")
     public String guardarCliente(@ModelAttribute Cliente cliente) {
 
         System.out.println("ENTRO A ACTUALIZAR");
