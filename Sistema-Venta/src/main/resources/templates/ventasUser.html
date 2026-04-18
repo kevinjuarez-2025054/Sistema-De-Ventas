@@ -47,7 +47,7 @@
                     <td th:text="${v.estado}"></td>
                     <td th:text="${v.cliente != null ? v.cliente.nombreCliente + ' ' + v.cliente.apellidoCliente : 'Sin cliente'}"></td>
                     <td class="acciones">
-                        <a th:href="@{'/editarVentas/' + ${v.codigoVenta}}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
+                        <a th:href="@{'/editarVentasUser/' + ${v.codigoVenta}}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
                     </td>
                 </tr>
             </tbody>
