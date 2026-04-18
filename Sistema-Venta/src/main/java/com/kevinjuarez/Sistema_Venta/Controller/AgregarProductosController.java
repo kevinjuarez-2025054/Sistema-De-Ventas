@@ -26,6 +26,6 @@ public class AgregarProductosController {
 
         service.saveProducto(producto);
 
-        return "redirect:/producto";
+        return "redirect:/productos";
     }
 }
