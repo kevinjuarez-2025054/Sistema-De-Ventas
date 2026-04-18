@@ -50,8 +50,12 @@
                     <td th:text="${p.stock}"></td>
                     <td th:text="${p.estado}"></td>
                     <td class="acciones">
-                        <a th:href="@{/editarProducto}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
-                        <a class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
+                        <a th:href="@{'/editarProducto/' + ${p.codigoProducto}}" class="btn-editar">
+                            <i class="fi fi-rs-pencil"></i>
+                        </a>
+                        <a th:href="@{'/eliminar-producto/' + ${p.codigoProducto}}" class="btn-eliminar">
+                            <i class="fi fi-rs-trash"></i>
+                        </a>
                     </td>
                 </tr>
             </tbody>
