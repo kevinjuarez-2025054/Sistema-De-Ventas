@@ -30,15 +30,21 @@ public class VentasController {
         return "redirect:/ventas";
     }
 
-    @PostMapping("/guardarventa")
-    public String guardar(@ModelAttribute Venta venta){
-        service.updateVenta(venta.getCodigoVenta(), venta);
-        return "redirect:/venta";
+    @GetMapping("/editarVentas/{id}")
+    public String formularioEditar(@PathVariable Integer id, Model model) {
+        Venta venta = service.getByIdVenta(id);
+        model.addAttribute("venta", venta);
+        return "editarVentas";
     }
 
-    @GetMapping("/eliminarventa/{id}")
-    public String eliminar(@PathVariable Integer id){
-        service.deleteVenta(id);
-        return "redirect:/venta";
+    @PostMapping("/actualizarVenta")
+    public String guardarVenta(@ModelAttribute Venta venta) {
+
+        System.out.println("ENTRO A ACTUALIZAR");
+        System.out.println(venta.getCodigoVenta());
+
+        service.updateVenta(venta.getCodigoVenta(), venta);
+
+        return "redirect:/ventas";
     }
 }
