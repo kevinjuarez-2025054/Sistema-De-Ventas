@@ -29,7 +29,7 @@ public class VentasUserController {
     public String formularioEditar(@PathVariable Integer id, Model model) {
         Venta venta = service.getByIdVenta(id);
         model.addAttribute("venta", venta);
-        return "editarVentas";
+        return "editarVentasUser";
     }
 
     @PostMapping("/actualizarVentaUser")
@@ -40,6 +40,6 @@ public class VentasUserController {
 
         service.updateVenta(venta.getCodigoVenta(), venta);
 
-        return "redirect:/ventas";
+        return "redirect:/ventasUser";
     }
 }
