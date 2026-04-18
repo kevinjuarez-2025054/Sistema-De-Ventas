@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+
+   <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-store"></i> Sistema Ventas
+        </div>
+        <nav>
+            <ul>
+                <li><a class="active" th:href="@{/homeUser}"><i class="fas fa-chart-line"></i> Inicio</a></li>
+                <li><a th:href="@{/ventasUser}"><i class="fas fa-shopping-cart"></i> Ventas</a></li>
+                <li><a th:href="@{/productosUser}"><i class="fas fa-box"></i> Productos</a></li>
+                <li><a th:href="@{/detalleventasUser}"><i class="fas fa-invoice"></i>Detalle Venta</a></li>
+                <li><a th:href="@{/home/cerrar-sesion}"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="card">
+            <h1>Bienvenidos a la pagina principal</h1>
+            <p>Este es el menu principal de donde se controla todo</p>
+        </div>
+
+</body>
+</html>

@@ -2,6 +2,9 @@ package com.kevinjuarez.Sistema_Venta.Controller;
 
 import com.kevinjuarez.Sistema_Venta.Entity.Usuario;
 import com.kevinjuarez.Sistema_Venta.Service.UsuarioService;
+
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,16 +30,23 @@ public class LoginController {
         return "login";
     }
 
-    //Procesar Login
     @PostMapping("/logear")
     public String login(@RequestParam String username,
                         @RequestParam String password,
-                        Model model) {
+                        Model model,
+                        HttpSession session) {
 
         Usuario u = service.login(username, password);
 
         if (u != null) {
-            return "redirect:/home-login";
+            session.setAttribute("usuario", u);
+
+            if ("ADMIN".equals(u.getRol())) {
+                return "redirect:/home";
+            } else {
+                return "redirect:/homeUser";
+            }
+
         } else {
             model.addAttribute("error", "Credenciales incorrectas");
             return "login";
@@ -44,7 +54,20 @@ public class LoginController {
     }
 
     @GetMapping("/home-login")
-    public String mostrarHome(){
+    public String mostrarHomeAdmin(HttpSession session) {
+        Usuario u = (Usuario) session.getAttribute("usuario");
+        if (u == null || !"ADMIN".equals(u.getRol())) {
+            return "redirect:/login";
+        }
         return "home";
+    }
+
+    @GetMapping("/homeUser")
+    public String mostrarHomeUser(HttpSession session) {
+        Usuario u = (Usuario) session.getAttribute("usuario");
+        if (u == null || !"USER".equals(u.getRol())) {
+            return "redirect:/login";
+        }
+        return "homeUser";
     }
 }
