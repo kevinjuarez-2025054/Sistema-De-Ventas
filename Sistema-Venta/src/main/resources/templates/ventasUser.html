@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Ventas</title>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-store"></i> Sistema Ventas
+        </div>
+        <nav>
+            <ul>
+                <li><a th:href="@{/homeUser}"><i class="fas fa-chart-line"></i> Inicio</a></li>
+                <li><a class="active" th:href="@{/ventasUser}"><i class="fas fa-shopping-cart"></i> Ventas</a></li>
+                <li><a th:href="@{/productosUser}"><i class="fas fa-box"></i> Productos</a></li>
+                <li><a th:href="@{/detalleventasUser}"><i class="fas fa-invoice"></i>Detalle Venta</a></li>
+                <li><a th:href="@{/home/cerrar-sesion}"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="container">
+        <div>
+            <a th:href="@{/agregarVenta}" class="btn">Agregar Venta</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Codigo de venta</th>
+                    <th>Fecha de venta</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+                    <th>Cliente</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="v : ${ventas}">
+                    <td th:text="${v.codigoVenta}"></td>
+                    <td th:text="${v.fechaVenta}"></td>
+                    <td th:text="${v.total}"></td>
+                    <td th:text="${v.estado}"></td>
+                    <td th:text="${v.cliente != null ? v.cliente.nombreCliente + ' ' + v.cliente.apellidoCliente : 'Sin cliente'}"></td>
+                    <td class="acciones">
+                        <a th:href="@{'/editarVentas/' + ${v.codigoVenta}}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
