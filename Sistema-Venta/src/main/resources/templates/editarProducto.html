@@ -11,9 +11,9 @@
 <div class="container">
     <h2>Editar Producto</h2>
 
-    <form th:action="@{/producto/guardarproducto}"
-          th:object="${producto}"
-          method="post">
+    <form th:action="@{/actualizarProducto}"
+      th:object="${producto}"
+      method="post">
 
         <input type="hidden" th:field="*{codigoProducto}">
 
