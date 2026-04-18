@@ -11,10 +11,9 @@
 <div class="container">
     <h2>Editar Cliente</h2>
 
-    <form id="formEditCliente"
-          th:action="@{/cliente/guardarcliente}"
+    <form th:action="@{/cliente/guardarcliente}" id="formEditCliente"
           th:object="${cliente}"
-          method="post"
+          th:method="post"
           class="profile-form">
 
         <!-- DPI oculto para enviar al controller -->
