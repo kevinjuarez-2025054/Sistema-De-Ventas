@@ -25,9 +25,9 @@ public class RegisterController {
                         @RequestParam String email,
                         Model model) {
 
-        Usuario u = service.registrar(username, password,email);
+        service.registrar(username, password, email);
 
-        return "redirect:/login";
+        return "redirect:/home-login";
     }
 
     @PostMapping("register-login")
