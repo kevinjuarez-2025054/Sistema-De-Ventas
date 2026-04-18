@@ -18,7 +18,7 @@ public class AgregarProductosUserController {
     @GetMapping("/agregarProductoUser")
     public String agregarProducto(Model model){
         model.addAttribute("producto", new Producto());
-        return "agregarProductoUser";
+        return "agregarProductosUser";
     }
 
     @PostMapping("/guardarProductoUser")
