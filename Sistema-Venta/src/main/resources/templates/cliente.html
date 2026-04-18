@@ -48,8 +48,8 @@
                     <td th:text="${c.direccionCliente}"></td>
                     <td th:text="${c.estadoCliente}"></td>
                     <td class="acciones">
-                        <a th:href="@{/editarCliente}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
-                        <a th:href="@{'/eliminar-cliente/' + ${c.dpiCliente}}" class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
+                        <a th:href="@{'/cliente/editarcliente/' + ${c.dpiCliente}}" class="btn-editar"><i class="fi fi-rs-pencil"></i></a>
+                        <a th:href="@{'/cliente/eliminar-cliente/' + ${c.dpiCliente}}" class="btn-eliminar"><i class="fi fi-rs-trash"></i></a>
                     </td>
                 </tr>
             </tbody>
